@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     async function fetchData() {
         try {
-            const response = await fetch('../data.json');
+            const response = await fetch('../data/data.json');
             return await response.json();
         } catch (error) {
             console.error('Erreur lors du chargement des données JSON :', error);
