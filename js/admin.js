@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const user = JSON.parse(sessionStorage.getItem('loggedInUser'));
     if (!user || user.role !== 'admin') {
-        window.location.href = '/index.html';
+        window.location.href = '../index.html';
         return;
     }
 
     async function fetchData() {
         try {
-            const response = await fetch('/data.json');
+            const response = await fetch('../data.json');
             return await response.json();
         } catch (error) {
             console.error('Erreur lors du chargement des données JSON :', error);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
             sessionStorage.removeItem('loggedInUser');
             alert('Vous avez été déconnecté.');
-            window.location.href = '/index.html';
+            window.location.href = '../index.html';
         }
     });
 });

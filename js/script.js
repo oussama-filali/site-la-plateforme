@@ -4,7 +4,7 @@ let data = {};
 // Fonctions utilitaires
 async function fetchData() {
     try {
-        const response = await fetch('/data.json');
+        const response = await fetch('../data.json');
         if (!response.ok) throw new Error(`Erreur HTTP : ${response.status}`);
         return await response.json();
     } catch (error) {
@@ -105,11 +105,11 @@ $(document).ready(async function() {
 
         if (!user && (currentPage.includes('student-dashboard.html') || currentPage.includes('admin.html'))) {
             alert('Vous devez être connecté.');
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
             return false;
         }
 
-        if (user && currentPage.includes('student-dashboard.html')) {
+        if (user && currentPage.includes('../student-dashboard.html')) {
             const reg = data.registrations.find(r => r.email === user.email);
             const presenceStatus = $('#presenceStatus');
             const chooseDateButton = $('#chooseDateButton');
@@ -160,7 +160,7 @@ $(document).ready(async function() {
         sessionStorage.setItem('loggedInUser', JSON.stringify(newUser));
         alert('Inscription réussie !');
         closeModal('signupModal');
-        window.location.href = 'student-dashboard.html';
+        window.location.href = '../student-dashboard.html';
     });
 
     // Connexion utilisateur
@@ -177,7 +177,7 @@ $(document).ready(async function() {
 
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
         alert('Connexion réussie !');
-        window.location.href = user.role === 'student' ? 'student-dashboard.html' : 'admin.html';
+        window.location.href = user.role === 'student' ? '../student-dashboard.html' : '../admin.html';
     });
 
     // Connexion admin
@@ -195,7 +195,7 @@ $(document).ready(async function() {
         sessionStorage.setItem('loggedInUser', JSON.stringify(admin));
         alert('Connexion réussie !');
         closeModal('adminLoginModal');
-        window.location.href = 'admin.html';
+        window.location.href = '../index.html';
     });
 
     // Confirmation/Modification date
@@ -246,7 +246,7 @@ $(document).ready(async function() {
     $('#logoutButton').on('click', function() {
         sessionStorage.removeItem('loggedInUser');
         alert('Vous avez été déconnecté.');
-        window.location.href = 'index.html';
+        window.location.href = '../admin.html';
     });
 
     // Ouvrir le modal de statut
@@ -281,10 +281,10 @@ $(document).ready(async function() {
 // Gestion DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function() {
     const currentPage = window.location.pathname;
-    if (currentPage.includes('student-dashboard.html') || currentPage.includes('admin.html')) {
+    if (currentPage.includes('../student-dashboard.html') || currentPage.includes('../admin.html')) {
         checkLoggedInUser();
     }
-    if (currentPage.includes('admin.html')) {
+    if (currentPage.includes('../admin.html')) {
         loadRegistrations();
     }
 });

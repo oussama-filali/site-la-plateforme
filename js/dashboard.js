@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     const user = checkLoggedInUser();
     if (!user || user.role !== 'student') {
         alert('Accès réservé aux étudiants.');
-        window.location.href = '/index.html';
+        window.location.href = '../index.html';
         return;
     }
 
     async function fetchData() {
         try {
-            const response = await fetch('/data.json');
+            const response = await fetch('../data.json');
             return await response.json();
         } catch (error) {
             console.error('Erreur lors du chargement des données JSON :', error);
