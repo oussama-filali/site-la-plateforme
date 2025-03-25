@@ -103,7 +103,7 @@ $(document).ready(async function() {
         const user = JSON.parse(sessionStorage.getItem('loggedInUser'));
         const currentPage = window.location.pathname;
 
-        if (!user && (currentPage.includes('student-dashboard.html') || currentPage.includes('admin.html'))) {
+        if (!user && (currentPage.includes('../student-dashboard.html') || currentPage.includes('../admin.html'))) {
             alert('Vous devez être connecté.');
             window.location.href = '../index.html';
             return false;
