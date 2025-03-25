@@ -1,5 +1,5 @@
 body {
-    background: url('../assets/img/4884841.jpg') no-repeat center center fixed;
+    background: url('/assets/img/4884841.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
     color: #e0e0e0; /* Light gray text for contrast against dark background */
