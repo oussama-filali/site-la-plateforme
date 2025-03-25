@@ -1,0 +1,73 @@
+{
+    "users": [
+        {
+            "userId": 1,
+            "email": "user1@laplateforme.io",
+            "password": "password123",
+            "role": "student"
+        },
+        {
+            "userId": 2,
+            "email": "oussama.halima-filali2@laplateforme.io",
+            "password": "pass123",
+            "role": "student"
+        },
+        {
+            "userId": 3,
+            "email": "sami.youri@laplateforme.io",
+            "password": "pass456",
+            "role": "student"
+        },
+        {
+            "userId": 4,
+            "email": "admin@laplateforme.io",
+            "password": "adminpass",
+            "role": "admin"
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "date": "2025-03-25",
+            "title": "Journée Portes Ouvertes - Cybersecurité et Développement logiciels",
+            "maxParticipants": 20,
+            "registered": 10
+        },
+        {
+            "id": 2,
+            "date": "2025-03-26",
+            "title": "Journée Portes Ouvertes - Développement Web et Mobile",
+            "maxParticipants": 20,
+            "registered": 5
+        },
+        {
+            "id": 3,
+            "date": "2025-03-27",
+            "title": "Journée Portes Ouvertes - Data et IA",
+            "maxParticipants": 20,
+            "registered": 3
+        }
+    ],
+    "registrations": [
+        {
+            "userId": 1,
+            "eventId": 1,
+            "status": "en attente"
+        },
+        {
+            "userId": 2,
+            "eventId": 1,
+            "status": "accepté"
+        },
+        {
+            "userId": 1,
+            "eventId": 2,
+            "status": "refusé"
+        },
+        {
+            "userId": 3,
+            "eventId": 2,
+            "status": "en attente"
+        }
+    ]
+}

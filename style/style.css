@@ -1,0 +1,361 @@
+body {
+    background: url('/assets/img/4884841.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0; /* Light gray text for contrast against dark background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Glass Effect for Cards and Modals */
+.glass-effect {
+    background: rgba(30, 30, 50, 0.3); /* Darker glass with slight blue tint */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1; /* Below modals but above background */
+    position: relative;
+    pointer-events: auto;
+}
+
+/* Carousel Styling */
+/* Réduction de la taille du carousel et centrage */
+.carousel {
+    height: 250px; /* Réduction de la hauteur */
+    margin: 50px auto; /* Centrage vertical et horizontal */
+    border-radius: 12px; /* Coins arrondis pour un design moderne */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre pour un effet flottant */
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le carousel */
+    opacity: 0.85; /* Légère transparence pour un effet moderne */
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover img {
+    opacity: 1; /* Augmente l'opacité au survol */
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff; /* White text for maximum contrast */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+}
+
+.carousel-caption h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Navigation Bar */
+nav.blue.darken-4 {
+    background: linear-gradient(135deg, #0C2D5F,#FBEAEB); /* Nouveau dégradé moderne */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    height: auto; /* Ajustez la hauteur de la navbar */
+    line-height: normal; /* Aligne verticalement le contenu */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    align-items: center; /* Aligne verticalement les éléments */
+    justify-content: space-between; /* Espace entre le logo et les liens */
+}
+
+/* Logo dans la navbar */
+nav .brand-logo img {
+    height: 40px; /* Ajuste la hauteur du logo */
+    vertical-align: middle; /* Aligne le logo avec le texte */
+    margin-right: 10px; /* Ajoute un espace entre le logo et le texte */
+    background: none; /* Supprime tout arrière-plan ajouté par le CSS */
+    border-radius: 0; /* Supprime les coins arrondis si appliqués */
+}
+
+nav .brand-logo {
+    font-size: 1.5rem; /* Ajuste la taille du texte */
+    display: flex; /* Utilise flexbox pour aligner le logo et le texte */
+    align-items: center; /* Aligne verticalement le logo et le texte */
+    justify-content: space-between;
+    font-weight: 500;
+    gap: 10px; /* Ajoute un espace entre le logo et le texte */
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Supprime les puces des liens */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul a {
+    color: #ffffff; /* Blanc pour un bon contraste */
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+nav ul a:hover {
+    color: #b2ebf2; /* Cyan clair au survol */
+}
+
+/* Navbar Responsive */
+nav.blue.darken-4 {
+    height: auto; /* Permet à la navbar de s'adapter à la hauteur du contenu */
+    padding: 10px 20px; /* Ajoute un espacement pour les petits écrans */
+    line-height: normal; /* Supprime la contrainte de hauteur fixe */
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    align-items: center; /* Aligne verticalement les éléments */
+    justify-content: space-between; /* Espace entre le logo et les liens */
+}
+
+nav .brand-logo {
+    font-size: 1.5rem; /* Ajuste la taille du texte pour les petits écrans */
+    display: flex; /* Utilise flexbox pour aligner le logo et le texte */
+    align-items: center; /* Aligne verticalement le logo et le texte */
+    gap: 10px; /* Ajoute un espace entre le logo et le texte */
+}
+
+nav .brand-logo img {
+    height: 40px; /* Ajuste la hauteur du logo */
+    margin-right: 10px; /* Ajoute un espace entre le logo et le texte */
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+    justify-content: flex-end; /* Aligne les liens à droite */
+    gap: 10px; /* Ajoute un espacement entre les liens */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Supprime les puces des liens */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul a {
+    font-size: 0.9rem; /* Réduit la taille des liens sur les petits écrans */
+    padding: 5px 10px;
+    color: #ffffff; /* Blanc pour un bon contraste */
+    text-decoration: none; /* Supprime le soulignement */
+    transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: #b2ebf2; /* Cyan clair au survol */
+}
+
+/* Table Styling */
+table.striped tbody tr {
+    background: rgba(255, 255, 255, 0.05); /* Subtle glass-like rows */
+    transition: background-color 0.3s ease;
+}
+
+table.striped tbody tr:hover {
+    background-color: rgba(59, 130, 246, 0.15); /* Soft blue hover */
+}
+
+table th {
+    background: #00bcd4; /* Cyan moderne pour les en-têtes */
+    font-weight: 500;
+}
+
+table td, table th {
+    color: #e0e0e0;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Buttons */
+.btn {
+    background: #00bcd4; /* Cyan moderne */
+    border-radius: 6px;
+    text-transform: none; /* Retirer la majuscule automatique */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #4fc3f7; /* Bleu pastel au survol */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn.red.darken-2 {
+    background: #ef4444; /* Modern red */
+}
+
+.btn.red.darken-2:hover {
+    background: #f87171; /* Lighter red */
+}
+
+.btn.grey.darken-2 {
+    background: #4b5563; /* Modern gray */
+}
+
+.btn.grey.darken-2:hover {
+    background: #6b7280; /* Lighter gray */
+}
+
+/* Modal Styling */
+.modal.glass-effect {
+    max-width: 450px;
+    background: rgba(0, 188, 212, 0.2); /* Cyan transparent pour un effet moderne */
+    z-index: 1050; /* Above all content */
+    border-radius: 12px;
+    border: 1px solid rgba(0, 188, 212, 0.4);
+}
+
+.modal-content {
+    padding: 20px;
+    color: #e0e0e0;
+}
+
+.modal-content h5 {
+    color: #93c5fd; /* Light blue for headings */
+    font-weight: 500;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 10px 20px;
+}
+
+.modal-footer .btn-flat {
+    color: #93c5fd;
+}
+
+/* Input Fields */
+.input-field input,
+.input-field select {
+    color: #e0e0e0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.input-field label {
+    color: #93c5fd; /* Light blue labels */
+}
+
+.input-field input:focus,
+.input-field select:focus {
+    border-bottom: 1px solid #60a5fa !important;
+    box-shadow: 0 1px 0 0 #60a5fa !important;
+}
+
+.input-field input:focus + label,
+.input-field select:focus + label {
+    color: #60a5fa !important; /* Active label color */
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    color: #e0e0e0;
+}
+
+.card-title {
+    color: #93c5fd;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel {
+        height: 250px;
+    }
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    .container {
+        padding: 10px;
+    }
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+    table.responsive-table {
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+    }
+    .card {
+        margin-bottom: 15px;
+    }
+    nav.blue.darken-4 {
+        flex-direction: column; /* Empile les éléments verticalement */
+        align-items: flex-start; /* Aligne les éléments à gauche */
+    }
+
+    nav .brand-logo {
+        font-size: 1.4rem; /* Réduit légèrement la taille du texte */
+    }
+
+    nav ul {
+        width: 100%; /* Les liens prennent toute la largeur */
+        justify-content: flex-start; /* Aligne les liens à gauche */
+    }
+
+    nav ul a {
+        font-size: 0.85rem; /* Réduit encore la taille des liens */
+        padding: 8px 15px; /* Ajoute un peu plus d'espacement */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 200px;
+    }
+    .carousel-caption h2 {
+        font-size: 1.2rem;
+    }
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    nav .brand-logo {
+        font-size: 1.4rem;
+    }
+    nav .brand-logo {
+        font-size: 1.2rem; /* Réduit encore la taille du texte */
+    }
+
+    nav ul a {
+        font-size: 0.8rem; /* Réduit encore la taille des liens */
+        padding: 5px 10px;
+    }
+}

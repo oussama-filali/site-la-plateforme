@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Plateforme_ - Portes Ouvertes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" href="/faviconio-logo/logo.svg" type="image/png" sizes="128x128">
+</head>
+<body>
+    <!-- Carousel -->
+    <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/img/am-i-doing-it-right-group-young-people-casual-clothes-working-modern-office.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/faviconio-logo/logo.svg" class="d-block w-100" alt="Slide 2">
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu principal avec animation -->
+    <div class="container mt-5 text-center presentation-container animate__animated animate__fadeInUp">
+        <h1>Bienvenue aux Portes Ouvertes de La Plateforme_</h1>
+        <p class="lead">Découvrez nos formations et réservez votre place pour les portes ouvertes du 25 au 27 mars 2025 !</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</button>
+        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signupModal">Inscription</button>
+        <button class="btn btn-dark mt-2" data-bs-toggle="modal" data-bs-target="#adminLoginModal">Connexion Admin</button>
+
+        <!-- Liste des événements -->
+        <div class="mt-5">
+            <h2>Événements à venir</h2>
+            <div id="eventList" class="row"></div>
+        </div>
+    </div>
+
+    <!-- Modal Connexion -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title">Connexion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Inscription -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inscription</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email (@laplateforme.io requis)</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">S'inscrire</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Connexion Admin -->
+    <div class="modal fade" id="adminLoginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-effect">
+                <div class="modal-header">
+                    <h5 class="modal-title">Connexion Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="adminLoginForm">
+                        <div class="mb-3">
+                            <label for="adminEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="adminEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adminPassword" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="adminPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Materialize JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/auth.js"></script>
+    
+</body>
+</html>
