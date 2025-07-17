@@ -1,10 +1,13 @@
 body {
-    background: url('../assets/img/4884841.jpg') no-repeat center center fixed;
+    background: linear-gradient(135deg, rgba(14, 30, 80, 0.9), rgba(30, 40, 100, 0.8)), 
+                url('../assets/img/4884841.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
-    color: #41a2f2; /* Light gray text for contrast against dark background */
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 /* Glass Effect for Cards and Modals */
@@ -21,53 +24,125 @@ body {
 }
 
 /* Carousel Styling */
-/* Réduction de la taille du carousel et centrage */
 .carousel {
-    height: 250px; /* Réduction de la hauteur */
-    margin: 50px auto; /* Centrage vertical et horizontal */
-    border-radius: 12px; /* Coins arrondis pour un design moderne */
+    height: 400px;
+    margin: 20px auto;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombre pour un effet flottant */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    max-width: 95%;
+    position: relative;
+}
+
+.carousel-inner {
+    height: 100%;
+    border-radius: 15px;
 }
 
 .carousel-item {
+    height: 100%;
     position: relative;
 }
 
 .carousel-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Ajuste l'image pour qu'elle remplisse le carousel */
-    opacity: 0.85; /* Légère transparence pour un effet moderne */
-    transition: opacity 0.3s ease;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(1.1);
+    transition: all 0.5s ease;
 }
 
 .carousel-item:hover img {
-    opacity: 1; /* Augmente l'opacité au survol */
+    filter: brightness(0.9) contrast(1.2);
+    transform: scale(1.05);
+}
+
+.carousel-indicators {
+    bottom: 15px;
+}
+
+.carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: #00bcd4;
+    border-color: #00bcd4;
+    transform: scale(1.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    background: linear-gradient(45deg, rgba(0, 188, 212, 0.2), rgba(0, 188, 212, 0.4));
+    border-radius: 0 15px 15px 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-next {
+    border-radius: 15px 0 0 15px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: linear-gradient(45deg, rgba(0, 188, 212, 0.4), rgba(0, 188, 212, 0.6));
 }
 
 .carousel-caption {
-    position: absolute;
-    top: 50%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(0, 188, 212, 0.3));
+    padding: 20px;
+    border-radius: 10px;
+    bottom: 30px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #ffffff; /* White text for maximum contrast */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for readability */
+    right: auto;
+    transform: translateX(-50%);
+    max-width: 80%;
 }
 
-.carousel-caption h2 {
-    font-size: 1.5rem;
-    font-weight: 500;
+.carousel-caption h5 {
+    font-size: 1.8rem;
+    font-weight: 600;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .carousel-caption p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0;
 }
 
-/* Navigation Bar */
+/* Conteneur principal */
+.presentation-container {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.presentation-container h1 {
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.presentation-container .lead {
+    color: #e0f7ff;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
 nav.blue.darken-4 {
     background: linear-gradient(135deg, #0C2D5F,#FBEAEB); /* Nouveau dégradé moderne */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -237,11 +312,50 @@ table td, table th {
 .modal-content {
     padding: 20px;
     color: #e0e0e0;
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    background: rgba(13, 110, 253, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .modal-content h5 {
     color: #93c5fd; /* Light blue for headings */
     font-weight: 500;
+}
+
+.modal-content.glass-effect {
+    background: rgba(30, 30, 50, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.modal-content.glass-effect .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-content.glass-effect .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.modal-content.glass-effect .form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #00bcd4;
+    box-shadow: 0 0 0 0.2rem rgba(0, 188, 212, 0.25);
+    color: #ffffff;
+}
+
+.modal-content.glass-effect .form-label {
+    color: #e0f7ff;
 }
 
 .modal-footer {
@@ -280,6 +394,13 @@ table td, table th {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .card-content {
@@ -291,71 +412,462 @@ table td, table th {
     font-weight: 500;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .carousel {
-        height: 250px;
-    }
-    .carousel-caption h2 {
-        font-size: 1.5rem;
-    }
-    .carousel-caption p {
-        font-size: 1rem;
-    }
-    .container {
-        padding: 10px;
-    }
-    .btn {
-        width: 100%;
-        margin: 5px 0;
-    }
-    table.responsive-table {
-        font-size: 0.8rem;
-        overflow-x: auto;
-        display: block;
-    }
-    .card {
-        margin-bottom: 15px;
-    }
-    nav.blue.darken-4 {
-        flex-direction: column; /* Empile les éléments verticalement */
-        align-items: flex-start; /* Aligne les éléments à gauche */
-    }
+/* Logo styling */
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+}
 
-    nav .brand-logo {
-        font-size: 1.4rem; /* Réduit légèrement la taille du texte */
-    }
+/* Wizard Progress Bar Styles */
+.wizard-progress {
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
 
-    nav ul {
-        width: 100%; /* Les liens prennent toute la largeur */
-        justify-content: flex-start; /* Aligne les liens à gauche */
-    }
+.wizard-progress .progress-bar {
+    transition: width 0.3s ease;
+}
 
-    nav ul a {
-        font-size: 0.85rem; /* Réduit encore la taille des liens */
-        padding: 8px 15px; /* Ajoute un peu plus d'espacement */
+/* Step Indicator Styles */
+.step-indicator {
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active {
+    color: #0d6efd !important;
+    font-weight: bold;
+}
+
+.step-indicator i {
+    margin-right: 5px;
+}
+
+/* Wizard Step Animation */
+.wizard-step {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.wizard-step.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Enhanced Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+}
+
+.modal-header {
+    background: rgba(13, 110, 253, 0.1);
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Input Group Enhancements */
+.input-group-text {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    color: #ffffff;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Statistics Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Event Cards Enhanced */
+#eventList .card {
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Progress Bar in Event Cards */
+.progress {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Button Enhancements */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern Auth Modal Styles */
+.modern-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    min-height: 500px;
+}
+
+.modal-close-btn {
+    z-index: 1060;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Auth Toggle Buttons */
+.auth-toggle {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+    background: rgba(13, 110, 253, 0.8);
+    border-color: #0d6efd;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    color: white;
+}
+
+/* Divider */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+    background: transparent;
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Auth Forms */
+.auth-form {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.auth-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Input Boxes */
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(13, 110, 253, 0.3);
+}
+
+.input-box input::placeholder {
+    color: transparent;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -10px;
+    left: 20px;
+    font-size: 12px;
+    color: #0d6efd;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus ~ i {
+    color: #0d6efd;
+}
+
+/* Forgot Password */
+.forgot-password {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+/* Auth Submit Button */
+.auth-submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0d6efd, #0056b3);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.3);
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(13, 110, 253, 0.4);
+    background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+/* Welcome Side */
+.welcome-side {
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.8), rgba(108, 117, 125, 0.8));
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-side::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.welcome-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.welcome-btn:hover {
+    background: white;
+    color: #0d6efd;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation classes */
+.animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.6s ease forwards;
+}
+
+.animation:nth-child(1) { animation-delay: 0.1s; }
+.animation:nth-child(2) { animation-delay: 0.2s; }
+.animation:nth-child(3) { animation-delay: 0.3s; }
+.animation:nth-child(4) { animation-delay: 0.4s; }
+.animation:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 480px) {
-    .carousel {
-        height: 200px;
+/* Responsive */
+@media (max-width: 768px) {
+    .modern-card {
+        min-height: 600px;
     }
-    .carousel-caption h2 {
-        font-size: 1.2rem;
+    
+    .welcome-side {
+        order: -1;
+        min-height: 200px;
     }
-    .carousel-caption p {
-        font-size: 0.9rem;
+    
+    .welcome-title {
+        font-size: 1.5rem;
     }
-    nav .brand-logo {
-        font-size: 1.4rem;
+    
+    .welcome-text {
+        font-size: 1rem;
     }
-    nav .brand-logo {
-        font-size: 1.2rem; /* Réduit encore la taille du texte */
+    
+    .input-box input {
+        padding: 12px 15px 12px 45px;
+        font-size: 14px;
     }
-
-    nav ul a {
-        font-size: 0.8rem; /* Réduit encore la taille des liens */
-        padding: 5px 10px;
+    
+    .input-box i {
+        left: 15px;
+        font-size: 16px;
+    }
+    
+    .input-box label {
+        left: 45px;
+        font-size: 14px;
+    }
+    
+    .input-box input:focus + label,
+    .input-box input:valid + label {
+        left: 15px;
+        font-size: 11px;
     }
 }

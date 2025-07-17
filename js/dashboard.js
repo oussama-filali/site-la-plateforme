@@ -1,20 +1,38 @@
 document.addEventListener('DOMContentLoaded', async function () {
-    // Vérifie si l'utilisateur est connecté
-    const user = checkLoggedInUser();
+    // Vérifier la connexion utilisateur
+    const user = JSON.parse(sessionStorage.getItem('loggedInUser'));
     if (!user || user.role !== 'student') {
-        alert('Accès réservé aux étudiants.');
-        window.location.href = '../index.html';
+        window.location.href = './index.html';
         return;
     }
 
+    // Charger les données
     async function fetchData() {
         try {
-            const response = await fetch('../data/data.json');
+            const response = await fetch('./data/data.json');
             return await response.json();
         } catch (error) {
             console.error('Erreur lors du chargement des données JSON :', error);
             return null;
         }
+    }
+
+    function showToast(message, type = 'success') {
+        const alertClass = type === 'success' ? 'alert-success' : 'alert-danger';
+        const alertElement = document.createElement('div');
+        alertElement.className = `alert ${alertClass} alert-dismissible fade show position-fixed`;
+        alertElement.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+        alertElement.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        document.body.appendChild(alertElement);
+        
+        setTimeout(() => {
+            if (alertElement.parentNode) {
+                alertElement.remove();
+            }
+        }, 3000);
     }
 
     const data = await fetchData();

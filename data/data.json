@@ -28,21 +28,21 @@
     "events": [
         {
             "id": 1,
-            "date": "2025-03-25",
+            "date": "2025-08-25",
             "title": "Journée Portes Ouvertes - Cybersecurité et Développement logiciels",
             "maxParticipants": 20,
             "registered": 10
         },
         {
             "id": 2,
-            "date": "2025-03-26",
+            "date": "2025-08-26",
             "title": "Journée Portes Ouvertes - Développement Web et Mobile",
             "maxParticipants": 20,
             "registered": 5
         },
         {
             "id": 3,
-            "date": "2025-03-27",
+            "date": "2025-08-27",
             "title": "Journée Portes Ouvertes - Data et IA",
             "maxParticipants": 20,
             "registered": 3
@@ -50,24 +50,31 @@
     ],
     "registrations": [
         {
+            "registrationId": 1,
             "userId": 1,
             "eventId": 1,
-            "status": "en attente"
+            "name": "user1",
+            "email": "user1@laplateforme.io",
+            "date": "2025-08-25",
+            "status": "pending"
         },
         {
+            "registrationId": 2,
             "userId": 2,
-            "eventId": 1,
-            "status": "accepté"
-        },
-        {
-            "userId": 1,
             "eventId": 2,
-            "status": "refusé"
+            "name": "oussama.halima-filali2",
+            "email": "oussama.halima-filali2@laplateforme.io",
+            "date": "2025-08-26",
+            "status": "accepted"
         },
         {
+            "registrationId": 3,
             "userId": 3,
-            "eventId": 2,
-            "status": "en attente"
+            "eventId": 3,
+            "name": "sami.youri",
+            "email": "sami.youri@laplateforme.io",
+            "date": "2025-08-27",
+            "status": "pending"
         }
     ]
 }

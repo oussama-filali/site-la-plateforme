@@ -5,82 +5,208 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Plateforme_ - Portes Ouvertes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../site-la-plateforme/style/style.css">
-    <link rel="icon" href="../site-la-plateforme/faviconio-logo/logo.svg" type="image/png" sizes="128x128">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="icon" href="./faviconio-logo/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Carousel -->
-    <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="0" class="active" aria-label="Diapositive 1"></button>
+            <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="1" aria-label="Diapositive 2"></button>
+            <button type="button" data-bs-target="#carouselHeader" data-bs-slide-to="2" aria-label="Diapositive 3"></button>
+        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../site-la-plateforme/assets/img/am-i-doing-it-right-group-young-people-casual-clothes-working-modern-office.jpg"  alt="Slide 1">
+                <img src="./assets/img/amis-latins-qui-trainent-ensemble_23-2151139481.avif" class="d-block w-100" alt="Étudiants ensemble">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Rejoignez la communauté</h5>
+                    <p>Découvrez un environnement d'apprentissage collaboratif</p>
+                </div>
             </div>
             <div class="carousel-item">
-                <img src="../site-la-plateforme/assets/img/amis-latins-qui-trainent-ensemble_23-2151139481.avif"  alt="Slide 2">
+                <img src="./assets/img/collegues-universitaires-posant-universite_23-2148844672.avif" class="d-block w-100" alt="Étudiants à l'université">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Excellence académique</h5>
+                    <p>Des formations de qualité pour votre avenir</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/img/group-young-business-people-working-office.jpg" class="d-block w-100" alt="Travail en équipe">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Préparez votre carrière</h5>
+                    <p>Développez vos compétences pour le monde professionnel</p>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Précédent</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Suivant</span>
+        </button>
     </div>
 
     <!-- Contenu principal avec animation -->
     <div class="container mt-5 text-center presentation-container animate__animated animate__fadeInUp">
-        <h1>Bienvenue aux Portes Ouvertes de La Plateforme_</h1>
-        <p class="lead">Découvrez nos formations et réservez votre place pour les portes ouvertes du 25 au 27 mars 2025 !</p>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Connexion</button>
-        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signupModal">Inscription</button>
-        <button class="btn btn-dark mt-2" data-bs-toggle="modal" data-bs-target="#adminLoginModal">Connexion Admin</button>
+        <h1 class="display-4 fw-bold text-primary mb-4">Bienvenue aux Portes Ouvertes de La Plateforme_</h1>
+        <p class="lead fs-5 mb-4">Découvrez nos formations et réservez votre place pour les portes ouvertes du 25 au 27 août 2025 !</p>
+        
+        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center mb-5">
+            <button class="btn btn-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-sign-in-alt me-2"></i>Connexion / Inscription
+            </button>
+            <button class="btn btn-dark btn-lg px-4" data-bs-toggle="modal" data-bs-target="#adminLoginModal">
+                <i class="fas fa-user-shield me-2"></i>Connexion Admin
+            </button>
+        </div>
+
+        <!-- Statistiques des événements -->
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="card bg-primary text-white h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-calendar-alt fa-3x mb-3"></i>
+                        <h4 id="totalEvents">3</h4>
+                        <p class="mb-0">Événements à venir</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-success text-white h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-3x mb-3"></i>
+                        <h4 id="totalRegistrations">18</h4>
+                        <p class="mb-0">Personnes inscrites</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-warning text-white h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chair fa-3x mb-3"></i>
+                        <h4 id="availableSpots">42</h4>
+                        <p class="mb-0">Places disponibles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Liste des événements -->
         <div class="mt-5">
-            <h2>Événements à venir</h2>
+            <h2 class="mb-4">
+                <i class="fas fa-calendar-check me-2"></i>Événements à venir
+            </h2>
             <div id="eventList" class="row"></div>
         </div>
     </div>
 
-    <!-- Modal Connexion -->
+    <!-- Modal Connexion/Inscription avec design moderne -->
     <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content glass-effect">
-                <div class="modal-header">
-                    <h5 class="modal-title">Connexion</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="Fermer"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Se connecter</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content modern-card">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3 modal-close-btn" data-bs-dismiss="modal" title="Fermer" aria-label="Fermer"></button>
+                
+                <div class="row g-0 h-100">
+                    <!-- Côté gauche - Formulaire -->
+                    <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+                        <div class="form-container">
+                            <!-- Toggle buttons -->
+                            <div class="auth-toggle mb-4">
+                                <button type="button" class="btn toggle-btn active" id="signInBtn">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                                </button>
+                                <button type="button" class="btn toggle-btn" id="signUpBtn">
+                                    <i class="fas fa-user-plus me-2"></i>Sign Up
+                                </button>
+                            </div>
 
-    <!-- Modal Inscription -->
-    <div class="modal fade" id="signupModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content glass-effect">
-                <div class="modal-header">
-                    <h5 class="modal-title">Inscription</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" title="Fermer"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="signupForm">
-                        <div class="mb-3">
-                            <label for="signupEmail" class="form-label">Email (@laplateforme.io requis)</label>
-                            <input type="email" class="form-control" id="signupEmail" required>
+                            <!-- Social Login -->
+                            <div class="social-login mb-4">
+                                <button class="btn social-btn me-2" title="Google">
+                                    <i class="fab fa-google"></i>
+                                </button>
+                                <button class="btn social-btn me-2" title="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="btn social-btn me-2" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                                <button class="btn social-btn" title="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                            </div>
+
+                            <div class="divider mb-4">
+                                <span>or use your email password</span>
+                            </div>
+
+                            <!-- Sign In Form -->
+                            <form id="signInForm" class="auth-form active">
+                                <div class="input-box animation mb-3">
+                                    <input type="email" id="signInEmail" required placeholder="votre.email@laplateforme.io">
+                                    <label>Email</label>
+                                    <i class="bx bxs-envelope"></i>
+                                </div>
+                                <div class="input-box animation mb-3">
+                                    <input type="password" id="signInPassword" required placeholder="Votre mot de passe">
+                                    <label>Password</label>
+                                    <i class="bx bxs-lock-alt"></i>
+                                </div>
+                                <div class="mb-3">
+                                    <a href="#" class="forgot-password">Forgot Your Password?</a>
+                                </div>
+                                <button type="submit" class="btn auth-submit-btn animation">
+                                    <i class="fas fa-sign-in-alt me-2"></i>SIGN IN
+                                </button>
+                            </form>
+
+                            <!-- Sign Up Form -->
+                            <form id="signUpForm" class="auth-form">
+                                <div class="input-box animation mb-3">
+                                    <input type="text" id="signUpUsername" required placeholder="Votre nom d'utilisateur">
+                                    <label>Username</label>
+                                    <i class="bx bxs-user"></i>
+                                </div>
+                                <div class="input-box animation mb-3">
+                                    <input type="email" id="signUpEmail" required placeholder="votre.email@laplateforme.io">
+                                    <label>Email</label>
+                                    <i class="bx bxs-envelope"></i>
+                                </div>
+                                <div class="input-box animation mb-3">
+                                    <input type="password" id="signUpPassword" required placeholder="Créez un mot de passe">
+                                    <label>Password</label>
+                                    <i class="bx bxs-lock-alt"></i>
+                                </div>
+                                <button type="submit" class="btn auth-submit-btn animation">
+                                    <i class="fas fa-user-plus me-2"></i>SIGN UP
+                                </button>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="signupPassword" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control" id="signupPassword" required>
+                    </div>
+
+                    <!-- Côté droit - Welcome -->
+                    <div class="col-md-6 welcome-side d-flex flex-column justify-content-center align-items-center text-center p-4">
+                        <div class="welcome-content" id="welcomeContent">
+                            <h2 class="welcome-title mb-3">Hello, Friend!</h2>
+                            <p class="welcome-text mb-4">Register with your personal details to use all of site features</p>
+                            <button class="btn welcome-btn" id="welcomeSignUpBtn">
+                                <i class="fas fa-user-plus me-2"></i>SIGN UP
+                            </button>
                         </div>
-                        <button type="submit" class="btn btn-primary">S'inscrire</button>
-                    </form>
+                        <div class="welcome-content d-none" id="signUpWelcomeContent">
+                            <h2 class="welcome-title mb-3">Welcome Back!</h2>
+                            <p class="welcome-text mb-4">To keep connected with us please login with your personal info</p>
+                            <button class="btn welcome-btn" id="welcomeSignInBtn">
+                                <i class="fas fa-sign-in-alt me-2"></i>SIGN IN
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -110,13 +236,10 @@
             </div>
         </div>
     </div>
-     <!-- Materialize JS -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+     <!-- Scripts Bootstrap uniquement -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../site-la-plateforme/js/auth.js"></script>
-    <script src="../site-la-plateforme/js/script.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/script.js"></script>
 
     
 </body>
