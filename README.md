@@ -38,7 +38,25 @@ Application web moderne pour la gestion des inscriptions aux journées portes ou
 - **Gestion robuste des erreurs**
 - **Indicateurs visuels** de chargement et mise à jour
 
-## 🛠️ Technologies utilisées
+## 🌐 Hébergement et déploiement
+
+### GitHub Pages
+Le site est hébergé sur GitHub Pages : [https://oussama-filali.github.io/site-la-plateforme/](https://oussama-filali.github.io/site-la-plateforme/)
+
+### Configuration pour GitHub Pages
+- **Fichier `.nojekyll`** : Évite les problèmes avec Jekyll
+- **Fichier `_config.yml`** : Configuration pour inclure tous les assets
+- **Chemins relatifs** : Tous les liens d'images utilisent des chemins relatifs sans `./`
+- **Formats supportés** : JPEG, PNG, SVG, AVIF, ICO
+
+### Résolution des problèmes d'images
+Les chemins d'images ont été optimisés pour GitHub Pages :
+- ❌ Ancien : `src="./assets/img/image.jpg"`
+- ✅ Nouveau : `src="assets/img/image.jpg"`
+- ❌ Ancien : `href="./faviconio-logo/favicon.ico"`
+- ✅ Nouveau : `href="faviconio-logo/favicon.ico"`
+
+## 🚀 Installation et démarrage
 
 - **Frontend** : HTML5, CSS3, JavaScript ES6+
 - **Framework CSS** : Bootstrap 5.3.0

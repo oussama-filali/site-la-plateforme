@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Images - La Plateforme</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-image { max-width: 300px; margin: 10px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Test d'affichage des images</h1>
+    
+    <h2>Images JPG :</h2>
+    <img src="assets/img/246.jpg" class="test-image" alt="Test 246.jpg" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: 246.jpg</div>
+    
+    <img src="assets/img/3409297.jpg" class="test-image" alt="Test 3409297.jpg" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: 3409297.jpg</div>
+    
+    <img src="assets/img/4884841.jpg" class="test-image" alt="Test 4884841.jpg" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: 4884841.jpg</div>
+    
+    <h2>Images AVIF :</h2>
+    <img src="assets/img/amis-latins-ensemble.avif" class="test-image" alt="Test amis-latins-ensemble.avif" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: amis-latins-ensemble.avif</div>
+    
+    <img src="assets/img/collegues-universite.avif" class="test-image" alt="Test collegues-universite.avif" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: collegues-universite.avif</div>
+    
+    <h2>Logo :</h2>
+    <img src="faviconio-logo/logo.png" class="test-image" alt="Test logo.png" onerror="this.nextSibling.style.display='block';">
+    <div class="error" style="display:none;">❌ Erreur de chargement: logo.png</div>
+</body>
+</html>
