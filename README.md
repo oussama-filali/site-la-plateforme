@@ -56,6 +56,53 @@ Les chemins d'images ont été optimisés pour GitHub Pages :
 - ❌ Ancien : `href="./faviconio-logo/favicon.ico"`
 - ✅ Nouveau : `href="faviconio-logo/favicon.ico"`
 
+#### Problèmes de noms de fichiers résolus
+- **Noms trop longs** : Raccourcis pour éviter les limitations serveur
+- **Caractères spéciaux** : Suppression des parenthèses et underscores
+- **Espaces** : Remplacés par des tirets
+- **Format AVIF** : Conservé car supporté par GitHub Pages
+
+#### Test des images
+Un fichier de test est disponible : `/test-images.html` pour vérifier l'affichage des images.
+
+### Configuration GitHub Pages expliquée
+
+#### Fichier `_config.yml`
+```yaml
+# Configuration simple pour GitHub Pages
+# Pas de traitement Jekyll - fichiers statiques uniquement
+```
+
+**Pourquoi cette configuration ?**
+- **Configuration minimale** : Évite les conflits avec Jekyll
+- **Fichiers statiques** : Pas de traitement spécial des images
+- **Compatibilité maximale** : Fonctionne avec tous les navigateurs
+
+#### Fichier `.nojekyll`
+- **Fichier vide** placé à la racine
+- **Désactive Jekyll** complètement
+- **Permet** l'accès direct aux fichiers assets
+- **Résout** les problèmes de fichiers avec underscore
+
+#### Types de fichiers supportés
+- ✅ **JPG/JPEG** : Format standard, toujours supporté
+- ✅ **PNG** : Transparence, logos
+- ✅ **SVG** : Vectoriel, logos scalables
+- ✅ **AVIF** : Format moderne, supporté par GitHub Pages
+- ✅ **ICO** : Favicons
+
+#### Limitations GitHub Pages
+- **Taille max du repo** : 1 GB
+- **Taille max par fichier** : 100 MB
+- **Bande passante** : 100 GB/mois
+- **Builds** : 10 par heure
+
+#### Optimisations appliquées
+- **Noms courts** : Évite les erreurs de chemin trop long
+- **Pas de caractères spéciaux** : Compatibilité serveur maximale
+- **Compression** : Images optimisées pour le web
+- **Cache-busting** : URLs avec paramètres pour éviter le cache
+
 ## 🚀 Installation et démarrage
 
 - **Frontend** : HTML5, CSS3, JavaScript ES6+
